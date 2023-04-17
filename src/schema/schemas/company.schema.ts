@@ -17,9 +17,6 @@ export class Company extends mongoose.Document {
 
   @Prop({ type: Date, default: null })
   updatedAt: Date;
-
-  // @Prop({ required: true, type: mongoose.Schema.Types.ObjectId, ref: 'User' })
-  // user: User;
 }
 
 export const CompanySchema = SchemaFactory.createForClass(Company);
