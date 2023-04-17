@@ -7,13 +7,10 @@ dotenv.config();
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://admin:LnFP3lrheKGvM9jz@cluster0.yv2cr9r.mongodb.net/advintest?retryWrites=true&w=majority',
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      },
-    ),
+    MongooseModule.forRoot(process.env.DATABASE_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }),
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },
       { name: Company.name, schema: CompanySchema },
