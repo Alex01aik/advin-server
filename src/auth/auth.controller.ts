@@ -23,7 +23,6 @@ export class AuthController {
     @Body() body: RegisterArgs,
     @UploadedFile() file?: Multer.File,
   ): Promise<MockAuthRes> {
-    console.log('register controller');
     return this.authService.register(body, file);
   }
 

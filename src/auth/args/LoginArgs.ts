@@ -6,6 +6,6 @@ export class LoginArgs {
   email: string;
 
   @IsString()
-  @Validate(PasswordFormat)
+  // @Validate(PasswordFormat)
   password: string;
 }
