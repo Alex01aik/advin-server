@@ -10,8 +10,6 @@ dotenv.config();
     MongooseModule.forRoot(process.env.DATABASE_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
     }),
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },
