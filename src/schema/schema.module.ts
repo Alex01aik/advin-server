@@ -7,7 +7,12 @@ dotenv.config();
 
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.DATABASE_URL),
+    MongooseModule.forRoot(process.env.DATABASE_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    }),
     MongooseModule.forFeature([
       { name: User.name, schema: UserSchema },
       { name: Company.name, schema: CompanySchema },
