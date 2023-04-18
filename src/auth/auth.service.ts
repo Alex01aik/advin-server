@@ -37,8 +37,6 @@ export class AuthService {
   async register(args: RegisterArgs, file?: Multer.File): Promise<MockAuthRes> {
     const isExist = await this.userService.findOneByEmail(args);
 
-    console.log('register after isExist');
-
     if (isExist) {
       throw new CustomException('Email already exist');
     }
