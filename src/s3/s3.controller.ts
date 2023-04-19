@@ -7,7 +7,7 @@ export class S3Controller {
   constructor(private readonly s3Service: S3Service) {}
 
   @Get('download')
-  async register(@Query('key') key: string, @Res() res: Response) {
+  async download(@Query('key') key: string, @Res() res: Response) {
     const s3Stream = await this.s3Service.downloadFile(key);
     res.setHeader('Content-disposition', `attachment; filename=${key}`);
     res.setHeader('Content-type', 'application/octet-stream');
